@@ -35,7 +35,7 @@ module.exports = function(grunt) {
 
     copy: {
       dev: {
-        cwd: 'app/',
+        cwd: 'client/',
         src: ['**/*.html', 'css/**/*.css' ],
         expand: true,
         dest: 'build/'
@@ -44,13 +44,12 @@ module.exports = function(grunt) {
 
     browserify: {
       dev: {
-        src: ['app/js/**/*.js'],
+        src: ['client/js/**/*.js'],
         dest: 'build/bundle.js',
         options: {
           transform: ['debowerify']
         }
       }
-    }
       test: {
         src: ['test/client/**/*test.js'],
         dest:'test/test_bundle.js',
@@ -58,6 +57,7 @@ module.exports = function(grunt) {
           transform: ['debowerify']
         }
       }
+    }
   });
 
   grunt.registerTask('build:dev', ['clean:dev', 'browserify:dev', 'copy:dev']);
