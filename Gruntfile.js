@@ -8,6 +8,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-open');
 
   grunt.initConfig({
     jshint: {
@@ -25,7 +26,7 @@ module.exports = function(grunt) {
     },
 
     simplemocha: {
-      src: ['test/**/*.js']
+      src: ['test/server/**/*.js']
     },
 
     clean: {
@@ -66,10 +67,17 @@ module.exports = function(grunt) {
           'build/app.css': 'client/styles/app.scss'
         }
       }
+    },
+
+    open: {
+      testrunner: {
+        path: 'test/test.html'
+      }
     }
   });
 
   grunt.registerTask('build:dev', ['clean:dev', 'browserify:dev', 'sass:dev', 'copy:dev']);
+  grunt.registerTask('build:test', ['browserify:test', 'open:testrunner']);
   grunt.registerTask('test', ['jshint', 'jscs', 'simplemocha']);
   grunt.registerTask('default', ['build:dev', 'test']);
 };
