@@ -1,7 +1,7 @@
 <h1>Build Tools Assignment</h1>
 <h3></h3>
 
-<img src=''/>
+<img src='https://travis-ci.org/warmbowski/sea-b24-build-tools-assgn.svg'/>
 
 Assignment for CF B24:
 
