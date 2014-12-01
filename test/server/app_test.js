@@ -21,4 +21,16 @@ describe('Bad Libs! server testing', function() {
         done();
       });
   });
+
+  it('should respond with story data', function(done) {
+    chai.request(url)
+      .post('/')
+      .send({storyChoice: 'story0'})
+      .end(function(err, res) {
+        expect(err).to.eql(null);
+        expect(res.body).to.have.property('storyArray');
+        expect(res.body).to.have.property('fillInArray');
+        done();
+      });
+  });
 });
