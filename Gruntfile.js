@@ -57,10 +57,24 @@ module.exports = function(grunt) {
           transform: ['debowerify']
         }
       }
+    },
+    
+    sass: {
+      dev:
+        options: {
+          includePaths: ['client/css/**/*.js'],
+          sourceMap: true
+        },
+        dist: {
+          files: {
+            'app.css': 'app.scss'
+          }
+        }
+      }
     }
   });
 
-  grunt.registerTask('build:dev', ['clean:dev', 'browserify:dev', 'copy:dev']);
+  grunt.registerTask('build:dev', ['clean:dev', 'browserify:dev', 'sass:dev' 'copy:dev']);
   grunt.registerTask('test', ['jshint', 'jscs', 'simplemocha']);
   grunt.registerTask('default', ['build:dev', 'test']);
 };
