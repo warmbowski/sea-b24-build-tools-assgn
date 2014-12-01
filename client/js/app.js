@@ -3,7 +3,7 @@ var $ = require('jquery');
 var _ = require('underscore');
 var storyArray;
 
-$("#story-list-form").submit(function(event) {
+$('#story-list-form').submit(function(event) {
   //retrieve selected story and corresponding word list
   event.preventDefault();
   var storySelected = $('input[name=story]:checked', '#story-list-form').val();
@@ -32,9 +32,9 @@ $('#word-query-form').submit(function(event) {
   //build completed story and display
   event.preventDefault();
   var formValues = _.pluck($('#word-query-form').serializeArray(), 'value');
-  //wanted to use _.weave from -contrib, but browserify wouldn't allow access
-  //to both -contrib and base underscore at the same time.
-  var storyCombined = $.map(storyArray, function(v, i) { return [v, '<i>' + formValues[i] + '</i>']; });
+  var storyCombined = $.map(storyArray, function(v, i) {
+    return [v, '<i>' + (formValues[i] || '') + '</i>'];
+  });
   $('#word-query').hide();
   $('#completed-story').append(storyCombined.join(''));
 });

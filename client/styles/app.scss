@@ -1,0 +1,32 @@
+$response-color: red;
+
+#heading {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 5px;
+
+  h1 {
+    font-weight: bold;
+  }
+}
+
+i {
+  color: $response-color;
+}
+
+table {
+
+  td{ 
+    padding:10px;
+  }
+  tr{
+    background: white;
+  }
+  tr:nth-child(odd){ 
+    background: lightgray;
+  }
+  tr:nth-child(even){
+    background: white;
+  }
+}

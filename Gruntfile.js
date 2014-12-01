@@ -37,7 +37,7 @@ module.exports = function(grunt) {
     copy: {
       dev: {
         cwd: 'client/',
-        src: ['**/*.html', 'css/**/*.css' ],
+        src: ['**/*.html'],
         expand: true,
         dest: 'build/'
       }
@@ -50,26 +50,20 @@ module.exports = function(grunt) {
         options: {
           transform: ['debowerify']
         }
+      },
+      test: {
+        src: ['test/client/**/*test.js'],
+        dest:'test/test_bundle.js',
+        options: {
+          transform: ['debowerify']
+        }
       }
-      // test: {
-      //   src: ['test/client/**/*test.js'],
-      //   dest:'test/test_bundle.js',
-      //   options: {
-      //     transform: ['debowerify']
-      //   }
-      // }
     },
 
     sass: {
       dev: {
-        options: {
-          includePaths: ['client/css/**/*.js'],
-          sourceMap: true
-        },
-        dist: {
-          files: {
-            'app.css': 'app.scss'
-          }
+        files: {
+          'build/app.css': 'client/styles/app.scss'
         }
       }
     }
