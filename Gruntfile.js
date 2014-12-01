@@ -7,6 +7,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-browserify');
+  grunt.loadNpmTasks('grunt-sass');
 
   grunt.initConfig({
     jshint: {
@@ -50,17 +51,17 @@ module.exports = function(grunt) {
           transform: ['debowerify']
         }
       }
-      test: {
-        src: ['test/client/**/*test.js'],
-        dest:'test/test_bundle.js',
-        options: {
-          transform: ['debowerify']
-        }
-      }
+      // test: {
+      //   src: ['test/client/**/*test.js'],
+      //   dest:'test/test_bundle.js',
+      //   options: {
+      //     transform: ['debowerify']
+      //   }
+      // }
     },
-    
+
     sass: {
-      dev:
+      dev: {
         options: {
           includePaths: ['client/css/**/*.js'],
           sourceMap: true
@@ -74,7 +75,7 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('build:dev', ['clean:dev', 'browserify:dev', 'sass:dev' 'copy:dev']);
+  grunt.registerTask('build:dev', ['clean:dev', 'browserify:dev', 'sass:dev', 'copy:dev']);
   grunt.registerTask('test', ['jshint', 'jscs', 'simplemocha']);
   grunt.registerTask('default', ['build:dev', 'test']);
 };

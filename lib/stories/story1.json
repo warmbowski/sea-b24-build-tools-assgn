@@ -1,6 +1,6 @@
 {
   "storyArray": [
-    "In a field one ",
+    "<p>In a field one ",
     "'s day, a Grasshopper was ",
     " about, ",
     " and ",
@@ -8,24 +8,24 @@
     " by bearing along ",
     " a load of ",
     " it was taking to the ",
-    ". The Grasshopper asked, 'Why not come and ", 
+    ".</p> <p>The Grasshopper asked, 'Why not come and ", 
     " with me instead of ", 
     " that load of ", 
-    "?' 'I am ", 
+    "?'</p> <p>'I am ", 
     " for the ", 
-    ",' said the Ant, and you should do the same.' 'Why bother about the ", 
+    ",' said the Ant, 'and you should do the same.'</p> <p>'Why bother about the ", 
     "?' said the Grasshopper 'we have plenty of ",
     " at present.' But the Ant",
     " on its way and continued its ",
-    ". When the ",
+    ".</p> <p>When the ",
     " came the Grasshopper had no ",
     " and found itself very ",
     ", while it saw the ants ",
     " every day the ",
     " it had collected in the ",
-    ". Then the said: It is best to ",
+    ".</p> <p>Then the ant said: It is best to ",
     " for the days of ",
-    "."
+    ".</p>"
   ],
   "fillInArray": [
     "time/age/epoch",

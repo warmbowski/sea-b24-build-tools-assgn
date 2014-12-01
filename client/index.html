@@ -6,15 +6,18 @@
   <link rel="stylesheet" type="text/css" href="styles/app.css">
 </head>
 <body>
-  <div id="chooseStory">
-    <form>
+  <div id="story-list">
+    <form id="story-list-form" action="">
       <input type="radio" name="story" value="story0" checked />My Weird Lady
       <br />
       <input type="radio" name="story" value="story1" />Aesop: Ant and Grasshopper
       <br />
+      <input type="submit" value="Submit" />
     </form>
   </div>
-  <div id="wordQuery"></div>
-  <div id="finishedStory"></div>
+  <div id="word-query">
+    <form id="word-query-form" action=""></form>
+  </div>
+  <div id="finished-story"></div>
   <script src="bundle.js"></script>
 </body>
