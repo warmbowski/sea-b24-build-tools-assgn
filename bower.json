@@ -1,0 +1,21 @@
+{
+  "name": "sea-b24-build-tools-assign",
+  "version": "0.0.1",
+  "homepage": "https://github.com/warmbowski/sea-b24-build-tools-assign",
+  "authors": [
+    "Paul Laskowski <pelaskowski@gmail.com>"
+  ],
+  "description": "Assignment on using build tools",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "underscore-contrib": "~0.3.0"
+  }
+}
