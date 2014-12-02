@@ -1,7 +1,7 @@
 'use strict';
 var $ = require('jquery');
 var _ = require('underscore');
-var storyArray;
+var story;
 
 $('#story-list-form').submit(function(event) {
   //retrieve selected story and corresponding word list
@@ -16,7 +16,7 @@ $('#story-list-form').submit(function(event) {
     data: {storyChoice: storySelected},
     success: function(data) {
       //create form for word type responses
-      storyArray = data.storyArray;
+      story = data.storyArray;
       var formInputs = '<table>';
       data.fillInArray.forEach(function(item) {
         var formItem = '<tr><td>' + item + '</td><td><input type="text" name="item" /></td></tr>';
@@ -32,9 +32,16 @@ $('#word-query-form').submit(function(event) {
   //build completed story and display
   event.preventDefault();
   var formValues = _.pluck($('#word-query-form').serializeArray(), 'value');
-  var storyCombined = $.map(storyArray, function(v, i) {
-    return [v, '<i>' + (formValues[i] || '') + '</i>'];
-  });
+  var storyCombined = weaveStory(story, formValues);
   $('#word-query').hide();
   $('#completed-story').append(storyCombined.join(''));
 });
+
+function weaveStory(storyArray, wordArray) {
+  var fullStory = $.map(storyArray, function(val, idx) {
+    return [val, '<i>' + (wordArray[idx] || '') + '</i>'];
+  });
+  return fullStory;
+}
+
+module.exports = weaveStory;
